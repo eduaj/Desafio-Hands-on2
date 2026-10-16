@@ -1,143 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Garden</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101110"><title>Sound Garden — Sinta o som. Viva a noite.</title>
+<style>
+:root{--bg:#101110;--panel:#1b1c19;--text:#f2f1e9;--muted:#aaa99e;--lime:#d4ff60;--line:#35362e}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--lime);outline-offset:5px}.wrap{width:min(1200px,90%);margin:auto}header{border-bottom:1px solid var(--line)}nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:23px;font-weight:900;letter-spacing:-1px;line-height:.9;display:flex;align-items:center;gap:12px}.mark{color:var(--lime);font-size:42px}.navlinks{display:flex;align-items:center;gap:30px;font-size:14px}.pill,.cta{display:inline-flex;justify-content:center;align-items:center;gap:20px;border:1px solid var(--line);border-radius:40px;padding:15px 24px;background:transparent;color:var(--text);font-weight:700}.cta{background:var(--lime);color:#15180c;border-color:var(--lime)}.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:45px;align-items:center;padding:76px 0 64px}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:var(--lime)}.eyebrow:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);margin-right:10px}h1{font-size:clamp(58px,7.5vw,104px);letter-spacing:-6px;line-height:.94;margin:25px 0}h1 em{font-style:normal;color:var(--lime)}.intro{max-width:380px;color:var(--muted);line-height:1.7;font-size:16px}.hero .cta{margin-top:20px}.herofoot{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px;margin-top:35px}.herofoot span{color:var(--lime);font-size:24px}.poster{height:510px;background:#c3d66a;position:relative;overflow:hidden;border-radius:180px 180px 12px 12px;color:#15200d;isolation:isolate}.poster:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 22% 15%,#ecffb9 0,transparent 45%),linear-gradient(145deg,transparent 35%,#829b3b);z-index:-2}.orb{position:absolute;width:340px;height:340px;left:calc(50% - 170px);top:85px;border-radius:50%;background:repeating-radial-gradient(ellipse at 50% 50%,#142412 0 4px,#31432a 5px 7px,#7d9250 8px 9px);box-shadow:0 30px 70px #23341466;transform:rotate(-25deg) scaleX(.8);animation:float 8s ease-in-out infinite}.orb:after{content:"";position:absolute;inset:40%;border-radius:50%;background:#c5d96b;border:12px solid #142412}.posterword{position:absolute;top:34px;left:30px;font-size:13px;letter-spacing:3px;font-weight:900}.posterbottom{position:absolute;bottom:28px;left:28px;right:28px;display:flex;justify-content:space-between;align-items:end}.posterbottom strong{font-size:49px;letter-spacing:-3px;line-height:.9}.posterbottom span{font-size:12px;max-width:90px;line-height:1.6}.sticker{position:absolute;right:23px;top:132px;width:94px;height:94px;background:var(--lime);border-radius:50%;display:grid;place-content:center;text-align:center;font-size:12px;font-weight:900;transform:rotate(12deg);border:1px solid #233414}.ticker{border-block:1px solid var(--line);padding:20px 0;overflow:hidden;white-space:nowrap;color:#c0bfb3;font-size:13px;letter-spacing:3px;text-align:center}.ticker b{color:var(--lime);margin:0 28px}.agenda{padding:70px 0}.heading{display:flex;align-items:end;justify-content:space-between;gap:20px}h2{font-size:clamp(34px,4vw,51px);letter-spacing:-2px;margin:15px 0}.note{font-size:12px;color:var(--muted);line-height:1.6}.tools{display:flex;justify-content:space-between;gap:20px;margin:28px 0}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);border-radius:30px;background:transparent;color:var(--muted);padding:11px 18px}.filter.active{background:var(--lime);color:#15180c;border-color:var(--lime)}input,select{background:var(--panel);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:13px}#search{width:245px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}.art{height:220px;padding:24px;position:relative;overflow:hidden;color:#161714;display:flex;align-items:end}.art:before{content:"";position:absolute;width:230px;height:230px;right:-20px;top:5px;border:28px solid currentColor;border-radius:50%;opacity:.75}.art:after{content:"";position:absolute;width:150px;height:150px;right:20px;top:45px;border:1px solid currentColor;border-radius:50%}.art strong{font-size:49px;line-height:.84;letter-spacing:-3px;z-index:1;max-width:180px}.art .tag{position:absolute;top:18px;left:18px;font-size:10px;letter-spacing:2px;border:1px solid #16171455;padding:6px 8px;border-radius:20px}.card:nth-child(2) .art:before{border-radius:0;transform:rotate(35deg)}.card:nth-child(3) .art:before{border-radius:50% 0 50% 0;transform:rotate(-30deg)}.details{padding:22px}.date{color:var(--lime);font-size:11px;font-weight:700;letter-spacing:1px}.details h3{font-size:23px;letter-spacing:-.7px;margin:13px 0 9px}.details p{color:var(--muted);font-size:13px;line-height:1.6;min-height:42px}.cardbottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;margin-top:20px}.cardbottom span{font-size:12px;color:var(--muted)}.reserve{border:0;background:transparent;color:var(--text);font-size:13px;font-weight:700;padding:9px 0}.reserve:hover{color:var(--lime)}.about{border-top:1px solid var(--line);padding:55px 0 65px;display:grid;grid-template-columns:1fr 1fr;gap:60px}.about p{color:var(--muted);line-height:1.8}.about h2{max-width:440px}.aboutbox{background:var(--lime);color:#171d10;border-radius:12px;padding:35px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}.aboutbox strong{font-size:36px;letter-spacing:-1px}.aboutbox p{color:#364125}footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:12px}.footerinner{display:flex;justify-content:space-between;gap:24px}dialog{width:min(460px,92%);background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:30px}dialog::backdrop{background:#000b;backdrop-filter:blur(7px)}.close{float:right;background:transparent;border:0;color:var(--text);font-size:26px;padding:0 4px}.formgrid{display:grid;gap:15px}label{display:grid;gap:8px;font-size:13px}dialog h2{font-size:30px;letter-spacing:-1px}.success{padding:20px 0;line-height:1.7}.hidden{display:none}#empty{color:var(--muted);padding:40px 0}#status{min-height:18px}@keyframes float{50%{transform:rotate(-15deg) scaleX(.8) translateY(-14px)}}@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}@media(max-width:800px){.hero{grid-template-columns:1fr;gap:38px;padding-top:40px}h1{letter-spacing:-4px}.poster{height:430px;max-width:510px;width:100%;margin:auto}.orb{top:50px}.grid{grid-template-columns:1fr}.art{height:240px}.tools,.heading{align-items:start;flex-direction:column}#search{width:100%}.about{grid-template-columns:1fr;gap:25px}.navlinks>a:not(.pill){display:none}.navlinks{gap:0}.pill{padding:12px 17px}.footerinner{flex-direction:column}.agenda{padding:45px 0}.ticker{text-align:left}.herofoot{margin-top:24px}}
+</style>
 </head>
-
 <body>
-    <header class=" d-flex justify-content-center align-items-center">
-        <a href="./index.html"><img src="img/Sound-logo (1).png" width="300" alt=""></a>
-    </header>
-    <main>
-        <section class="full d-flex justify-content-center align-items-center" style="background-color: #F8BBD0; color: #fff">
-            <div class="text-center">
-                <h1>Adicione um banner maneiro aqui</h1>
-            </div>
-        </section>
-        <section class="full">
-            <div class="container text-center">
-                <h2>Próximos eventos</h2>
-            </div>
-            <div id="novoevento" class="container d-flex justify-content-center align-items-center"></div>
-            <div class="container text-center">
-                <a href="eventos.html" class="btn btn-secondary">ver todos os eventos</a>
-            </div>
-        </section>
-        <section class="full d-flex justify-content-center align-items-center" style="background-color: #f2f2f2; color: #555">
-            <div class="container">
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col">
-                        <h2>A Sound Garden</h2>
-
-                        <p>Sound Garden é uma casa de show super descolada</p>
-
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id autem, fugiat recusandae, totam inventore harum iste libero obcaecati neque fugit ipsam. Dolorum quae quis odio rem at eum cumque excepturi.</p>
-                        <p>Alias animi nostrum aperiam sapiente laudantium corporis esse voluptatem, repellendus nam exercitationem reprehenderit error. Maiores quibusdam molestias adipisci magni maxime explicabo voluptatibus ipsum delectus, cum soluta esse
-                            ab ducimus. Molestias facilis hic quod similique, voluptate porro architecto itaque odit dolore temporibus, dignissimos magni delectus in?</p>
-                        <p>Nemo excepturi soluta provident minima amet? Architecto distinctio molestiae nisi necessitatibus nesciunt possimus dignissimos consequatur iusto cupiditate quam accusantium tempora odio at deleniti explicabo voluptatum blanditiis
-                            natus qui, dolorem ea eius minima itaque aspernatur? Quia voluptatem ex, mollitia consequuntur quas incidunt, aliquid explicabo nesciunt hic nobis libero velit at reiciendis.</p>
-                    </div>
-                    <div class="col">
-                        <img src="img/music.svg" width="500px">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-    <footer>
-        <div class="container d-flex justify-content-center align-items-center">
-            <a href="#">
-                <img src="img/Sound-logo-black (1).png" width="200px" alt="">
-            </a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="eventos.html">eventos</a>
-                    </li>
-                    <li>
-                        <a href="admin.html">painel administrativo</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </footer>
-
-    <div id="modal" class="modal-container">
-        <div>
-            <button class="fechar">x</button>
-            <h3 class="subtitulo">Realizar reserva</h3>
-            <form>
-                <input type="text" class="input" placeholder="Nome">
-                <input type="text" class="input" placeholder="Email">
-                <input type="button" class="button" value="Cadastrar">
-            </form>
-        </div>
-    </div>
-
-    <style>
-        .modal-container {
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, .5);
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        
-        .modal {
-            background: white;
-            width: 60%;
-            min-width: 300px;
-            padding: 40px;
-            border: 1px solid black;
-            box-shadow: 0 0 0 10px white;
-            position: relative;
-        }
-        
-        @keyframes modal {
-            from {
-                opacity: 0;
-                transform: translate3d(0, -60px, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
-        }
-        
-        .mostrar .modal {
-            animation: modal .3s;
-        }
-        
-        .fechar {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            width: 50px;
-            border: 1px solid white;
-            color: black;
-            cursor: pointer;
-        }
-        
-        .modal-container.mostrar {
-            display: flex;
-        }
-    </style>
-
-    <script src="./js/index.js"></script>
-
-</body>
-
-</html>
+<header><nav class="wrap" aria-label="Menu principal"><a class="brand" href="./index.html" aria-label="Sound Garden início"><span class="mark" aria-hidden="true">✳</span><span>SOUND<br>GARDEN</span></a><div class="navlinks"><a href="#agenda">Agenda</a><a href="#sobre">A casa</a><a class="pill" href="#agenda">Encontre sua noite ↗</a></div></nav></header>
+<main>
+<section class="hero wrap"><div><div class="eyebrow">Onde a música acontece</div><h1>Sinta o som.<br>Viva a <em>noite.</em></h1><p class="intro">Novos encontros. Volume lá em cima.<br>Seu próximo momento inesquecível começa aqui.</p><a class="cta" href="#agenda">Explorar a agenda <span aria-hidden="true">↗</span></a><div class="herofoot"><span aria-hidden="true">✳</span> Música independente. Conexões de verdade.</div></div><div class="poster" role="img" aria-label="Arte de um disco de vinil verde, com a frase Sounds like a good night"><span class="posterword">SOUND GARDEN / LIVE SESSIONS</span><div class="orb"></div><div class="sticker">PLAY IT<br>LOUD ↗</div><div class="posterbottom"><strong>GOOD MUSIC.<br>GREAT NIGHTS.</strong><span>O seu lugar<br>é perto do palco.</span></div></div></section>
+<div class="ticker" aria-hidden="true">MÚSICA AO VIVO <b>✳</b> ENCONTRE SUA TRIBO <b>✳</b> SINTA A ENERGIA <b>✳</b> SOUND GARDEN <b>✳</b> MÚSICA AO VIVO</div>
+<section id="agenda" class="agenda wrap"><div class="heading"><div><div class="eyebrow">Escolha o seu próximo encontro</div><h2>Tem uma noite pra você.</h2></div><p class="note">Agenda ilustrativa · Eventos fictícios<br>Explore e teste uma reserva de demonstração.</p></div><div class="tools"><div class="filters" role="group" aria-label="Filtrar por estilo"><button class="filter active" data-genre="Todos" aria-pressed="true">Todos</button><button class="filter" data-genre="Rock" aria-pressed="false">Rock</button><button class="filter" data-genre="Eletrônica" aria-pressed="false">Eletrônica</button><button class="filter" data-genre="Jazz" aria-pressed="false">Jazz</button></div><input id="search" type="search" aria-label="Buscar evento ou artista" placeholder="Buscar evento ou artista ↗"></div><p id="status" class="note" aria-live="polite"></p><div id="cards" class="grid"></div><p id="empty" hidden>Nenhum evento encontrado. Experimente outro estilo ou busca.</p></section>
+<section id="sobre" class="about wrap"><div><div class="eyebrow">Muito além do palco</div><h2>Uma casa.<br>Mil formas de sentir.</h2><p>A Sound Garden é um ponto de encontro para quem descobre o mundo pela música. Do primeiro acorde ao último bis, a ideia é simples: estar presente e deixar o som fazer o resto.</p></div><div class="aboutbox"><span>✳ &nbsp; VEM FAZER PARTE</span><strong>Desconecte do resto.<br>Conecte com o som.</strong><p>Descubra artistas. Encontre pessoas. Viva a experiência.</p></div></section>
+</main><footer><div class="footerinner wrap"><span>© Sound Garden · Experiência de demonstração</span><a href="./admin.html">Painel administrativo original ↗</a><a href="./eventos.html">Agenda original ↗</a></div></footer>
+<dialog id="booking" aria-labelledby="booking-title"><button class="close" type="button" aria-label="Fechar reserva">×</button><div id="formview"><div class="eyebrow">Você perto do palco</div><h2 id="booking-title">Simular reserva</h2><p id="eventname"></p><p class="note">Demonstração local: não emite ingresso, não cobra e não envia seus dados. Use dados fictícios.</p><form id="bookingform" class="formgrid"><label>Nome fictício<input name="guest" required maxlength="80" autocomplete="off" placeholder="Ex.: Alex"></label><label>Quantidade<select name="quantity"><option value="1">1 ingresso</option><option value="2">2 ingressos</option><option value="3">3 ingressos</option><option value="4">4 ingressos</option></select></label><button class="cta" type="submit">Simular minha reserva ↗</button></form></div><div id="successview" class="hidden"><div class="eyebrow">Tudo certo no teste</div><h2>Seu lugar na demo.</h2><p id="confirmation" class="success"></p><p class="note">Esta simulação não é um ingresso válido. Nenhum dado foi enviado ou armazenado.</p><button id="done" class="cta">Voltar à agenda ↗</button></div></dialog>
+<script>
+'use strict';
+const events=[
+{id:1,name:'Amplifica: indie & rock',artist:'Os Satélites + Jardim Elétrico',genre:'Rock',date:'07 NOV · SÁB · 21H',art:'AMPLI<br>FICA.',color:'#c1b3ed'},
+{id:2,name:'Depois da meia-noite',artist:'Luna DJ + Coletivo Frequência',genre:'Eletrônica',date:'14 NOV · SÁB · 23H',art:'AFTER<br>HOURS.',color:'#ef926e'},
+{id:3,name:'Jazz no jardim',artist:'Aurora Trio + convidados',genre:'Jazz',date:'22 NOV · DOM · 19H',art:'JAZZ<br>GARDEN.',color:'#c9dc8a'}];
+let genre='Todos',selected=null,opener=null;
+const cards=document.querySelector('#cards'),search=document.querySelector('#search'),dialog=document.querySelector('#booking');
+function render(){
+const query=search.value.trim().toLocaleLowerCase('pt-BR');
+const filtered=events.filter(e=>(genre==='Todos'||e.genre===genre)&&(e.name+' '+e.artist+' '+e.genre).toLocaleLowerCase('pt-BR').includes(query));
+cards.replaceChildren();
+filtered.forEach(e=>{
+const article=document.createElement('article');article.className='card';
+article.innerHTML='<div class="art" style="background:'+e.color+'"><span class="tag">'+e.genre.toUpperCase()+'</span><strong>'+e.art+'</strong></div><div class="details"><div class="date">'+e.date+'</div><h3>'+e.name+'</h3><p>'+e.artist+'</p><div class="cardbottom"><span>Evento fictício</span><button class="reserve" type="button">Simular reserva ↗</button></div></div>';
+article.querySelector('button').addEventListener('click',function(){selected=e;opener=this;document.querySelector('#eventname').textContent=e.name+' · '+e.date;document.querySelector('#formview').classList.remove('hidden');document.querySelector('#successview').classList.add('hidden');document.querySelector('#bookingform').reset();dialog.showModal();});
+cards.append(article);
+});
+document.querySelector('#empty').hidden=filtered.length>0;
+document.querySelector('#status').textContent=filtered.length+' evento'+(filtered.length===1?'':'s')+' na seleção';
+}
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{
+genre=button.dataset.genre;document.querySelectorAll('.filter').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});render();
+}));
+search.addEventListener('input',render);
+function closeDialog(){dialog.close();if(opener&&opener.isConnected)opener.focus();}
+document.querySelector('.close').addEventListener('click',closeDialog);
+document.querySelector('#done').addEventListener('click',closeDialog);
+document.querySelector('#bookingform').addEventListener('submit',event=>{
+event.preventDefault();const data=new FormData(event.currentTarget);
+document.querySelector('#confirmation').textContent=data.get('guest')+', sua simulação de '+data.get('quantity')+' ingresso(s) para '+selected.name+' foi concluída.';
+document.querySelector('#formview').classList.add('hidden');document.querySelector('#successview').classList.remove('hidden');document.querySelector('#done').focus();
+});
+render();
+</script></body></html>
